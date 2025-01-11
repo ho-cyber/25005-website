@@ -32,7 +32,7 @@ const WhatIsFTC = () => {
 
         {/* Card Image Below Text */}
         <img
-          src="src/assets/2.jpg"
+          src="../assets/2.jpg"
           alt="FTC Robotics Competition"
           className="rounded-lg mt-6 w-full max-h-96 object-cover"
         />
