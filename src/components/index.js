@@ -7,9 +7,8 @@ import Portfolio from "./Portfolio";
 import Position from "./Position";
 import SpacemanCanvas from "./Spaceman";
 import BlogPage from "./BlogPage";
-import RobotCanvas from "./RobotCanvas"; // Add this line
 
 
 export {
-    CanvasLoader, Contact, Experience, Hero, Navbar, Portfolio, Position, SpacemanCanvas, BlogPage,RobotCanvas
+    CanvasLoader, Contact, Experience, Hero, Navbar, Portfolio, Position, SpacemanCanvas, BlogPage,
 };
