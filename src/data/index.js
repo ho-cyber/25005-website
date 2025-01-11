@@ -3,7 +3,7 @@ import {
   devnotes,
   oscs,
   o
-} from "../assets";
+} from "../../public/assets";
 
 export const navLinks = [
   {
