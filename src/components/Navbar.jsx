@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { close, menu } from "../../public/assets";
+import { close, menu } from "../../public";
 import { navLinks } from "../data";
 
 const Navbar = () => {

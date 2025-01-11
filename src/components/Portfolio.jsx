@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { teamMember1, teamMember2, teamMember3 } from '../../public/assets';
+import { teamMember1, teamMember2, teamMember3 } from '../../public';
 import Modal from './Modal';
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";

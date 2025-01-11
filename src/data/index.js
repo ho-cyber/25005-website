@@ -3,7 +3,7 @@ import {
   devnotes,
   oscs,
   o
-} from "../../public/assets";
+} from "../../public";
 
 export const navLinks = [
   {
@@ -73,19 +73,19 @@ const portfolio = [
     name: "Our Github",
     description:
       "We mantain all of our source code on our Github Publicly. This includes the source code for this website and our TeleOp and Autonomous programmes.",
-    image: '/assets/oscs.png',
+    image: '/oscs.png',
   },
   {
     name: "Engineering Notebook",
     description:
       "Our team diligently records the challenges encountered and the solutions implemented in order to maintain a comprehensive engineering portfolio. This portfolio serves as a collection of all our detailed notes and insights.",
-    image: '/assets/1.png',
+    image: '/1.png',
   },
   {
     name: "Meet The team",
     description:
       "Our FTC team is a dynamic group of individuals, each bringing unique perspectives and diverse skillsets. United under one roof, we collaborate seamlessly to achieve our shared goals, embodying the true spirit of FIRST along the way.",
-    image: "/assets/slideshows/1.png",
+    image: "/slideshows/1.png",
   },
 ];
 
