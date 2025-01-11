@@ -6,7 +6,7 @@ const WhatIsFTC = () => {
       {/* Left Side: Logo */}
       <div className="flex-shrink-0">
         <img
-          src="/first.png"
+          src="first.png"
           alt="FTC Logo"
           className="w-40 h-40 object-contain"
         />

@@ -73,7 +73,7 @@ const portfolio = [
     name: "Our Github",
     description:
       "We mantain all of our source code on our Github Publicly. This includes the source code for this website and our TeleOp and Autonomous programmes.",
-    image: '/oscs.png',
+    image: 'oscs.png',
   },
   {
     name: "Engineering Notebook",
