@@ -1,5 +1,3 @@
-import { RobotCanvas } from "./index";
-import Position from "./Position";
 
 const Hero = ({ scrollContainer }) => {
   return (
@@ -26,7 +24,6 @@ Tech Infinity          </h1>
       <img className="parallax__crater" src="./parallax/5Crater.svg" alt="" />
       <img className="parallax__sun" src="./parallax/6Sun.svg" alt="" />
 
-      <RobotCanvas scrollContainer={scrollContainer} />
     </section>
   );
 };
