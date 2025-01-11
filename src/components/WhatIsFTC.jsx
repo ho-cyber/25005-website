@@ -6,7 +6,7 @@ const WhatIsFTC = () => {
       {/* Left Side: Logo */}
       <div className="flex-shrink-0">
         <img
-          src="src/assets/first.png"
+          src="/assets/first.png"
           alt="FTC Logo"
           className="w-40 h-40 object-contain"
         />
@@ -32,7 +32,7 @@ const WhatIsFTC = () => {
 
         {/* Card Image Below Text */}
         <img
-          src="../assets/2.jpg"
+          src="/assets/2.jpg"
           alt="FTC Robotics Competition"
           className="rounded-lg mt-6 w-full max-h-96 object-cover"
         />
