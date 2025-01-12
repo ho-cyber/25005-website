@@ -98,9 +98,9 @@ const Experience = () => {
   }, []);
 
   const partners = [
-    { src: "/assets/LegoGoa.svg", alt: "LegoGoa" },
-    { src: "/assets/PRATHAM.svg", alt: "Partner 2" },
-    { src: "/assets/logo-color.svg", alt: "Partner 3" },
+    { src: "LegoGoa.svg", alt: "LegoGoa" },
+    { src: "PRATHAM.svg", alt: "Partner 2" },
+    { src: "logo-color.png", alt: "Partner 3" },
   ];
 
   return (

@@ -4,11 +4,11 @@ import { Modal, Box, Button } from "@mui/material";
 const TeamMemberModal = ({ isOpen, onClose }) => {
   // Define image paths directly here
   const imagePaths = [
-    "src/assets/slideshows/1.png",
-    "src/assets/slideshows/2.png",
-    "src/assets/slideshows/3.png",
-    "src/assets/slideshows/4.png",
-    "src/assets/slideshows/5.png",
+    "slideshows/1.png",
+    "slideshows/2.png",
+    "slideshows/3.png",
+    "slideshows/4.png",
+    "slideshows/5.png",
     // Add more as needed
   ];
 
