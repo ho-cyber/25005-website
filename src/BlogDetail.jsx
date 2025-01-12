@@ -6,25 +6,30 @@ import rehypeRaw from "rehype-raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css"; // CSS file for syntax highlighting
 
-
-// Import the highlight.js styles (choose your preferred style)
-import "highlight.js/styles/github-dark.css";
-
 const BlogDetail = () => {
   const { id } = useParams(); // Get the blog ID from the URL
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/ho-cyber/Website/refs/heads/main/blogs.md")
-      .then((response) => response.text())
-      .then((text) => {
+    const fetchBlog = async () => {
+      const cacheBuster = new Date().getTime(); // Generate a unique timestamp
+      const url = `https://raw.githubusercontent.com/ho-cyber/Website/refs/heads/main/blogs.md?cb=${cacheBuster}`;
+
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
         const parsedBlogs = parseBlogs(text); // Parse the markdown text into blog data
         const currentBlog = parsedBlogs.find((blog) => blog.id === id); // Find the blog by ID
         setBlog(currentBlog);
-      })
-      .catch((error) => console.error("Error loading blog:", error))
-      .finally(() => setLoading(false)); // Stop loading once data is fetched
+      } catch (error) {
+        console.error("Error loading blog:", error);
+      } finally {
+        setLoading(false); // Stop loading once data is fetched
+      }
+    };
+
+    fetchBlog();
   }, [id]);
 
   if (loading) {
