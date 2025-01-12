@@ -1,35 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { parseBlogs } from "./utils/parseBlogs";
+import { parseBlogs } from "./utils/parseBlogs"; // Utility function to parse markdown
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github-dark.css"; // CSS file for syntax highlighting
+import "highlight.js/styles/github-dark.css"; // CSS for syntax highlighting
 
 const BlogDetail = () => {
   const { id } = useParams(); // Get the blog ID from the URL
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchBlog = async () => {
-      const cacheBuster = new Date().getTime(); // Generate a unique timestamp
-      const url = `https://raw.githubusercontent.com/ho-cyber/Website/refs/heads/main/blogs.md?cb=${cacheBuster}`;
+  // Function to fetch the latest content using the GitHub API
+  const fetchBlog = async () => {
+    const apiUrl = `https://api.github.com/repos/ho-cyber/Website/contents/blogs.md`;
 
-      try {
-        const response = await fetch(url);
-        const text = await response.text();
-        const parsedBlogs = parseBlogs(text); // Parse the markdown text into blog data
+    try {
+      const response = await fetch(apiUrl, {
+        headers: {
+          Accept: "application/vnd.github.v3+json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data && data.content) {
+        // Decode Base64 content
+        const decodedContent = atob(data.content);
+        const parsedBlogs = parseBlogs(decodedContent); // Parse markdown into blog data
         const currentBlog = parsedBlogs.find((blog) => blog.id === id); // Find the blog by ID
         setBlog(currentBlog);
-      } catch (error) {
-        console.error("Error loading blog:", error);
-      } finally {
-        setLoading(false); // Stop loading once data is fetched
+      } else {
+        console.error("Failed to retrieve blog content.");
       }
-    };
+    } catch (error) {
+      console.error("Error fetching blog:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchBlog();
+  useEffect(() => {
+    fetchBlog(); // Fetch the blog when the component loads
   }, [id]);
 
   if (loading) {
